@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #eef2f3;
+    color: #1f2933;
+}
+
+header {
+    background: linear-gradient(135deg, #15191f, #1f2937);
+    color: white;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.avatar {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 44% center;
+    display: block;
+    border: 3px solid #2563eb;
+}
+
+.tag {
+    color: #7dd3fc;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: 42px;
+}
+
+.intro {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 18px;
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 6px solid #2563eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    margin-top: 0;
+    color: #1d4ed8;
+}
+
+p,
+li {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Lista de habilidades viram "pilulas" em vez de li */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-list li {
+    background-color: #eef2ff;
+    color: #1d4ed8;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 15px;
+}
+
+a {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #0f766e;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+a:hover {
+    background-color: #0d5e58;
+}
