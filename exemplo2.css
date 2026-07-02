@@ -1,0 +1,317 @@
+/* ==========================================================================
+   style-exemplo-2-criativo.css
+   Exercício 3 · Chegar no visual
+
+   Segunda solução de exemplo, para o MESMO HTML do exemplo 1. Os
+   comentários aqui explicam o MECANISMO de cada propriedade nova que
+   aparece (a que já foi explicada no exemplo 1 não se repete em
+   detalhe). A ideia é mostrar que o mesmo HTML pode virar visuais bem
+   diferentes dependendo só do CSS escolhido.
+
+   ESTRUTURA HTML QUE ESSE CSS ESPERA (igual ao exemplo 1):
+
+     <body>
+       <header>
+         <h1>Seu Nome</h1>
+         <p>Sua profissão ou frase de efeito</p>
+       </header>
+
+       <main>
+         <section>
+           <h2>Sobre mim</h2>
+           <p>Texto...</p>
+         </section>
+
+         <section>
+           <h2>Habilidades</h2>
+           <ul class="skills">
+             <li>HTML</li>
+             <li>CSS</li>
+             <li>Git</li>
+           </ul>
+         </section>
+
+         <section>
+           <h2>Contato</h2>
+           <a href="mailto:voce@email.com">Enviar e-mail</a>
+           <a href="https://github.com/seu-usuario" target="_blank">GitHub</a>
+         </section>
+       </main>
+
+       <footer>
+         <p>Feito por Você · 2026</p>
+       </footer>
+     </body>
+
+   Conecte este arquivo no <head> do seu HTML assim:
+     <link rel="stylesheet" href="style-exemplo-2-criativo.css">
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. VARIÁVEIS CSS
+   :root é um seletor que aponta para o elemento raiz do documento (na
+   prática, o <html>). Qualquer propriedade customizada declarada aqui
+   dentro, no formato --nome-da-variavel, fica acessível em QUALQUER
+   regra do arquivo através da função var(--nome-da-variavel).
+
+   A vantagem prática: se você usar --cor-primaria em 6 lugares
+   diferentes do arquivo e quiser trocar a cor da marca inteira, muda
+   o valor uma vez aqui em cima, e todo o resto se atualiza sozinho.
+   Sem variável, você teria que trocar o valor manualmente em cada uma
+   das 6 regras.
+   ========================================================================== */
+:root {
+  --cor-primaria: #f2542d;
+  --cor-primaria-escura: #c73e1d;
+  --cor-secundaria: #1a7f5a;
+  --cor-fundo: #fff9f5;
+  --cor-texto: #2b2b2b;
+  --cor-texto-suave: #6b6b6b;
+  --sombra-suave: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --sombra-forte: 0 10px 24px rgba(242, 84, 45, 0.25);
+}
+
+
+/* ==========================================================================
+   2. RESET BÁSICO
+   (mesma função explicada no exemplo 1: zera espaçamentos padrão do
+   navegador e muda o cálculo de largura para incluir padding e border)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   3. BASE DA PÁGINA
+   ========================================================================== */
+body {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+
+  background-color: var(--cor-fundo);
+  /* var(--cor-fundo) busca o valor declarado lá em :root e o usa aqui,
+     como se tivéssemos escrito #fff9f5 diretamente. */
+
+  color: var(--cor-texto);
+  line-height: 1.65;
+}
+
+
+/* ==========================================================================
+   4. HEADER COM GRADIENTE
+   ========================================================================== */
+header {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+  /* linear-gradient gera uma imagem calculada pelo navegador: uma
+     transição gradual entre duas (ou mais) cores. O primeiro valor
+     (135deg) define o ÂNGULO da transição — 0deg iria de baixo para
+     cima, 90deg da esquerda para a direita; 135deg faz a transição
+     correr na diagonal, do canto superior-esquerdo ao inferior-direito.
+     Essa "imagem" é usada como valor do atalho background, no lugar de
+     uma cor sólida. */
+
+  color: #ffffff;
+  text-align: center;
+  padding: 64px 24px;
+}
+
+header h1 {
+  font-size: 2.7rem;
+  margin-bottom: 10px;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* text-shadow funciona como box-shadow, mas desenha a sombra seguindo
+     o contorno das LETRAS do texto, não do retângulo do elemento.
+     Os valores seguem a mesma ordem: deslocamento horizontal,
+     deslocamento vertical, desfoque e cor. */
+}
+
+header p {
+  font-size: 1.15rem;
+
+  color: rgba(255, 255, 255, 0.85);
+  /* rgba funciona como rgb (red, green, blue, de 0 a 255 cada), mas
+     aceita um quarto valor, o alpha (transparência), de 0 (invisível)
+     a 1 (totalmente opaco). Aqui é branco com 85% de opacidade, o que
+     deixa a cor de fundo por trás influenciar levemente o resultado. */
+}
+
+
+/* ==========================================================================
+   5. ÁREA PRINCIPAL
+   ========================================================================== */
+main {
+  max-width: 720px;
+
+  margin: -32px auto 0 auto;
+  /* margin com quatro valores segue a ordem: topo, direita, baixo,
+     esquerda (sentido horário, começando de cima). Um valor NEGATIVO
+     de margin puxa o elemento na direção oposta à normal: aqui, -32px
+     no topo faz o main subir 32px, sobrepondo a parte de baixo do
+     header. É assim que os cartões parecem "flutuar" sobre o gradiente. */
+
+  padding: 0 24px 40px 24px;
+
+  position: relative;
+  /* position: relative não move o elemento por si só, mas estabelece
+     este elemento como referência de posicionamento para filhos que
+     usem position: absolute (não é o caso aqui) e evita que a margin
+     negativa cause sobreposições inesperadas com o que vem depois no
+     fluxo do documento. */
+}
+
+
+/* ==========================================================================
+   6. SECTIONS COM HOVER
+   ========================================================================== */
+section {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: var(--sombra-suave);
+  padding: 30px 32px;
+  margin-bottom: 24px;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* declara ANTES do :hover quais propriedades devem ser animadas
+     quando mudarem. A transição precisa estar no estado "normal" do
+     elemento (aqui), não dentro do :hover, porque também é usada
+     quando o mouse SAI do elemento e ele volta ao estado original. */
+}
+
+section:hover {
+  /* mesma lógica do a:hover do exemplo 1: regra aplicada apenas
+     enquanto o cursor está sobre este elemento específico. */
+
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-forte);
+}
+
+section h2 {
+  color: var(--cor-primaria);
+  font-size: 1.45rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+section h2::before {
+  /* ::before é um pseudo-elemento: cria um elemento "virtual", filho
+     do h2, sem precisar escrever nada a mais no HTML. Ele só existe
+     no CSS. A propriedade content é obrigatória para ele aparecer —
+     mesmo vazia (content: ""), ela "liga" o pseudo-elemento. */
+
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  /* quando o raio é exatamente metade da largura e da altura de um
+     elemento quadrado, o resultado é um círculo perfeito. */
+
+  background-color: var(--cor-secundaria);
+  margin-right: 8px;
+}
+
+section p {
+  color: var(--cor-texto-suave);
+}
+
+
+/* ==========================================================================
+   7. LISTA DE HABILIDADES (pílulas com ícone)
+   ========================================================================== */
+ul.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+ul.skills li {
+  background-color: #e7f5ee;
+  color: var(--cor-secundaria);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+ul.skills li::before {
+  /* mesmo mecanismo do section h2::before acima, mas aqui o content
+     não é vazio: o texto declarado em content é inserido de verdade
+     antes do conteúdo original do elemento (o nome da habilidade). */
+  content: "✓ ";
+}
+
+
+/* ==========================================================================
+   8. LINKS COMO BOTÕES
+   ========================================================================== */
+a {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  margin-right: 12px;
+  margin-top: 8px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  background-color: var(--cor-primaria-escura);
+
+  transform: scale(1.04);
+  /* scale multiplica o tamanho do elemento no eixo X e Y ao mesmo
+     tempo. 1.04 significa 104% do tamanho original: um crescimento
+     de 4%, pequeno o suficiente para não distorcer o layout ao redor,
+     já que transform (assim como translateY) não empurra outros
+     elementos, só redesenha este por cima do que já estava lá. */
+}
+
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 28px;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   10. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 600px) {
+  header {
+    padding: 48px 16px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    margin-top: -20px;
+    padding: 0 16px 32px 16px;
+  }
+
+  section {
+    padding: 22px;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    margin-right: 0;
+  }
+}
