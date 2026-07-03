@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Estruturado — Exemplo Comentado</title>
+
+    <!--
+      DICA: O <link> abaixo conecta este HTML ao arquivo style.css.
+      rel="stylesheet" diz ao navegador que é um arquivo de estilos.
+      href aponta para o caminho do arquivo CSS.
+    -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--
+      ===========================
+      <header>
+      ===========================
+      Cabeçalho da página. Normalmente contém o título principal
+      do site e a navegação (<nav>). Aparece UMA vez, no topo.
+    -->
+    <header>
+      <h1>Portfólio de Desenvolvedor</h1>
+
+      <!--
+        <nav> = bloco de navegação.
+        Links internos usam href="#id-da-secao" para pular até aquele ponto.
+      -->
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <!--
+      ===========================
+      <main>
+      ===========================
+      Conteúdo PRINCIPAL da página. Deve existir apenas UM <main> por página.
+      Tudo que for o foco central vai aqui dentro: seções, artigos, formulários.
+    -->
+    <main>
+
+      <!--
+        ===========================
+        <section> com ID
+        ===========================
+        Uma seção temática dentro do <main>. Agrupa conteúdo relacionado.
+
+        ID: identificador ÚNICO no documento. Usado para:
+          - Navegação interna (href="#sobre")
+          - Estilização específica no CSS (#sobre { ... })
+          - JavaScript (document.getElementById("sobre"))
+        Regra: cada ID deve aparecer uma única vez por página.
+      -->
+      <section id="sobre">
+        <h2>Sobre mim</h2>
+
+        <!--
+          CLASS: classe reutilizável. Pode ser aplicada a VÁRIOS elementos.
+          No CSS: .destaque { ... }
+          Um elemento pode ter mais de uma classe: class="destaque grande"
+        -->
+        <p class="destaque">
+          Estudante de desenvolvimento web apaixonado por criar interfaces
+          funcionais e bem estruturadas.
+        </p>
+        <p>
+          Atualmente aprendendo HTML, CSS e os fundamentos da web moderna.
+        </p>
+      </section>
+
+      <!-- ============================================================ -->
+
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+
+        <!--
+          A classe "lista-habilidades" permite estilizar só esta lista,
+          sem afetar outras <ul> que existam na página.
+        -->
+        <ul class="lista-habilidades">
+          <li>HTML semântico</li>
+          <li>CSS e estilização</li>
+          <li>Lógica de programação</li>
+          <li>Python</li>
+          <li>Git e controle de versão</li>
+        </ul>
+      </section>
+
+      <!-- ============================================================ -->
+
+      <section id="projetos">
+        <h2>Projetos</h2>
+        <p>Confira alguns trabalhos desenvolvidos durante o curso:</p>
+
+        <!--
+          <article> = conteúdo independente e autocontido.
+          Poderia ser retirado da página e ainda fazer sentido sozinho.
+          Aqui cada projeto é um <article> com a classe "card-projeto".
+        -->
+        <article class="card-projeto">
+          <h3>Cartão Digital</h3>
+          <p>Página pessoal com HTML semântico e CSS do zero.</p>
+          <a href="#" class="btn">Ver projeto</a>
+        </article>
+
+        <!--
+          Este card tem DUAS classes: "card-projeto" e "destaque".
+          Vai herdar os estilos de ambas.
+        -->
+        <article class="card-projeto destaque">
+          <h3>Calculadora em Python</h3>
+          <p>Lógica de programação aplicada com funções e loops.</p>
+          <a href="#" class="btn">Ver projeto</a>
+        </article>
+      </section>
+
+      <!-- ============================================================ -->
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <p>Quer conversar? Me encontre por aqui:</p>
+        <ul>
+          <li><a href="mailto:lucas@email.com">lucas@email.com</a></li>
+          <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!--
+      ===========================
+      <footer>
+      ===========================
+      Rodapé da página. Costuma ter créditos, links legais, ano de criação.
+    -->
+    <footer>
+      <!--
+        O ID "rodape-principal" permite estilizar ESTE elemento
+        com #rodape-principal { ... } no CSS.
+      -->
+      <p id="rodape-principal">Feito com HTML e CSS · 2026</p>
+    </footer>
+
+  </body>
+</html>
