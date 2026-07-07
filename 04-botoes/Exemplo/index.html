@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Meu Portfólio</h1>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="sobre">
+        <h2>Sobre mim</h2>
+        <p>Estudante de desenvolvimento web. Aprendendo HTML, CSS e JavaScript.</p>
+        <button onclick="alternarTema()">🌙 Modo Escuro</button>
+      </section>
+
+      <section id="habilidades">
+        <h2>Habilidades</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Lógica de programação</li>
+          <li class="oculto">JavaScript</li>
+          <li class="oculto">Git</li>
+        </ul>
+        <button onclick="revelarHabilidades()">+ Ver mais</button>
+      </section>
+
+      <section id="projetos">
+        <h2>Projetos</h2>
+
+        <article class="card">
+          <h3>Cartão Digital</h3>
+          <p>Página pessoal feita com HTML e CSS.</p>
+          <a href="#">Ver projeto</a>
+        </article>
+
+        <article class="card oculto" id="projeto-extra">
+          <h3>Calculadora</h3>
+          <p>Lógica de programação com Python.</p>
+          <a href="#">Ver projeto</a>
+        </article>
+
+        <button onclick="alternarProjeto()">+ Ver mais projetos</button>
+      </section>
+
+      <section id="contato">
+        <h2>Contato</h2>
+        <ul>
+          <li>
+            <span id="email">seuemail@email.com</span>
+            <button onclick="copiarEmail()">📋 Copiar</button>
+          </li>
+          <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+        </ul>
+
+        <p>Visitas nessa página: <strong><span id="contador">0</span></strong></p>
+        <button onclick="contarVisita()">👋 Registrar visita</button>
+        <button onclick="zerarContador()">Zerar</button>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Feito com HTML, CSS e JavaScript · 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
