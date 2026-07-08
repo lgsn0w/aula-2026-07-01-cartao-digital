@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tela pausada. — blog do Lucas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- faixa no topo, estilo aviso de blog antigo -->
+  <div class="faixa-topo">
+    📽️ atualizando toda semana — obrigado por passar por aqui
+  </div>
+
+  <!-- navbar fixa -->
+  <header class="navbar" id="navbar">
+    <a href="#topo" class="navbar-logo">tela pausada.</a>
+    <nav class="navbar-links">
+      <a href="#topo" id="link-inicio" class="link-nav ativo">início</a>
+      <a href="#posts" id="link-posts" class="link-nav">posts</a>
+      <a href="#sobre" id="link-sobre" class="link-nav">sobre</a>
+      <a href="#contato" id="link-contato" class="link-nav">contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- hero -->
+    <section class="hero" id="topo">
+      <span class="etiqueta">Notas Semanais</span>
+      <h1>tela pausada.</h1>
+      <p class="hero-sub">
+        um lugar pra eu anotar tudo que penso enquanto reassisto
+      </p>
+      <span class="badge-assistindo">
+        <span class="badge-bolinha"></span>
+        agora assistindo: Decálogo — Episódio V
+      </span>
+    </section>
+
+    <!-- posts -->
+    <section class="secao-posts" id="posts">
+      <h2 class="titulo-secao">últimos posts</h2>
+
+      <div class="grade-posts">
+
+        <article class="cartao-post rotacao-1">
+          <p class="post-data">12 de março</p>
+          <h3>reassistindo o Decálogo</h3>
+          <p>
+            very good 👍.
+          </p>
+          <div class="post-rodape">
+            <a href="#" class="link-leia-mais">ler mais →</a>
+            <button class="botao-curtir" id="curtir-1">
+              <span class="coracao">♡</span>
+              <span class="contagem-curtidas" id="contagem-1">3</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="cartao-post rotacao-2">
+          <p class="post-data">03 de março</p>
+          <h3>Transformers 4</h3>
+          <p>
+            Eu sou o Optimus Prime.
+          </p>
+          <div class="post-rodape">
+            <a href="#" class="link-leia-mais">ler mais →</a>
+            <button class="botao-curtir" id="curtir-2">
+              <span class="coracao">♡</span>
+              <span class="contagem-curtidas" id="contagem-2">7</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="cartao-post rotacao-1">
+          <p class="post-data">22 de fevereiro</p>
+          <h3>High and Low</h3>
+          <p>
+            massa tbm 👍
+          </p>
+          <div class="post-rodape">
+            <a href="#" class="link-leia-mais">ler mais →</a>
+            <button class="botao-curtir" id="curtir-3">
+              <span class="coracao">♡</span>
+              <span class="contagem-curtidas" id="contagem-3">12</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="cartao-post rotacao-2">
+          <p class="post-data">10 de fevereiro</p>
+          <h3>Solaris</h3>
+          <p>
+            Muito bom, dormi durante o filme 👍.
+          </p>
+          <div class="post-rodape">
+            <a href="#" class="link-leia-mais">ler mais →</a>
+            <button class="botao-curtir" id="curtir-4">
+              <span class="coracao">♡</span>
+              <span class="contagem-curtidas" id="contagem-4">9</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- sobre -->
+    <section class="secao-sobre" id="sobre">
+      <h2 class="titulo-secao">sobre mim</h2>
+      <div class="bloco-sobre">
+        <div class="foto-placeholder">L</div>
+        <div class="texto-sobre">
+          <p>
+            oi, eu sou o Lucas. esse blog nasceu porque eu precisava de um
+            lugar pra falar de cinema sem lotar o grupo de amigos de
+            spoiler.
+          </p>
+          <p class="texto-extra" id="texto-extra">
+            texto surpresa 👍.
+          </p>
+          <button class="link-leia-mais" id="botao-leia-mais">leia mais sobre mim →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- contato -->
+    <section class="secao-contato" id="contato">
+      <h2 class="titulo-secao">deixe um recado</h2>
+      <p class="contato-sub">tipo um livro de visitas, mas em 2026.</p>
+
+      <form class="formulario" id="formulario">
+        <div class="campo">
+          <label for="campo-nome">nome</label>
+          <input type="text" id="campo-nome" placeholder="como você se chama?">
+          <p class="erro-campo" id="erro-nome">esse campo é obrigatório.</p>
+        </div>
+
+        <div class="campo">
+          <label for="campo-email">e-mail</label>
+          <input type="email" id="campo-email" placeholder="pra eu poder responder">
+          <p class="erro-campo" id="erro-email">esse campo é obrigatório.</p>
+        </div>
+
+        <div class="campo">
+          <label for="campo-mensagem">mensagem</label>
+          <textarea id="campo-mensagem" rows="4" placeholder="seu recado aqui"></textarea>
+          <p class="erro-campo" id="erro-mensagem">esse campo é obrigatório.</p>
+        </div>
+
+        <button type="button" class="botao-enviar" id="botao-enviar">enviar recado</button>
+        <p class="mensagem-sucesso" id="mensagem-sucesso">
+          ✓ recado recebido — obrigado por passar por aqui!
+        </p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-colunas">
+      <div class="rodape-coluna">
+        <p class="rodape-titulo">tela pausada.</p>
+        <p>um caderno de replanos, atualizado sempre que dá.</p>
+      </div>
+      <div class="rodape-coluna">
+        <p class="rodape-titulo">navegação</p>
+        <a href="#posts">posts</a>
+        <a href="#sobre">sobre</a>
+        <a href="#contato">contato</a>
+      </div>
+      <div class="rodape-coluna">
+        <p class="rodape-titulo">por aqui também</p>
+        <a href="#">letterboxd</a>
+        <a href="#">codeberg</a>
+      </div>
+    </div>
+    <p class="rodape-assinatura">feito à mão por Lucas — HTML, CSS e JS, sem framework nenhum · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
