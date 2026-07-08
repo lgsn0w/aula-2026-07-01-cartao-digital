@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navbar do zero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar" id="topo">
+    <a href="#topo" class="navbar-logo">meu site</a>
+    <nav class="navbar-links">
+      <a href="#topo"      id="link-inicio"   class="link-nav ativo">início</a>
+      <a href="#sobre"     id="link-sobre"    class="link-nav">sobre</a>
+      <a href="#projetos"  id="link-projetos" class="link-nav">projetos</a>
+      <a href="#contato"   id="link-contato"  class="link-nav">contato</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="secao hero">
+      <h1>olá, mundo.</h1>
+      <p>essa é a seção inicial. role a página para ver as outras seções.</p>
+    </section>
+
+    <section class="secao" id="sobre">
+      <h2>sobre</h2>
+      <p>aqui vai uma descrição sobre você ou o projeto. pode ser um parágrafo curto apresentando quem você é.</p>
+      <p>a navbar ficou presa no topo enquanto você rolou até aqui — isso é o <code>position: sticky</code>.</p>
+    </section>
+
+    <section class="secao" id="projetos">
+      <h2>projetos</h2>
+      <p>lista de projetos, portfólio, trabalhos — o que fizer sentido pro seu site.</p>
+      <p>percebe que o link "projetos" ficou destacado na navbar quando você clicou nele? isso é o JavaScript com <code>classList</code>.</p>
+    </section>
+
+    <section class="secao" id="contato">
+      <h2>contato</h2>
+      <p>formulário, e-mail, redes sociais — formas de alguém te encontrar.</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
